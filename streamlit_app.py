@@ -239,7 +239,7 @@ with tab4:
     st.dataframe(data=filtered_cluster_df, width=700)
 
 with tab5:
-    heatmap_df = main_df.drop(columns=["instant", "dteday", "year"], axis=1)
+    heatmap_df = main_df.drop(columns=["instant", "dateday", "year"], axis=1)
     correlation_values = heatmap_df.corr()
     fig, ax = plt.subplots(figsize=(15,15))
     ax.heatmap(
