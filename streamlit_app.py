@@ -157,7 +157,7 @@ with tab2:
     st.write("Weekdays show larger numbers and averages on weekdays")
 
 with tab3:
-    st.subheader("Number of Rentals Rrom Registered Renters Ruring Reekends and Reekdays Rase Rn Renant Rype")
+    st.subheader("Number of Rentals From Registered Renters During Weekends and Weekdays Base Pn Tenant Type")
     st.write("we can use plot points to see the daily borrowing pattern in hours based on tenant type (casual, registered)")
     fig1, ax1 = plt.subplots()
     sns.pointplot(data=main_df, x="hour", y="casual", hue="weekday", ax=ax1)
