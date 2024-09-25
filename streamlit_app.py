@@ -96,8 +96,8 @@ st.pyplot(fig)
 
 st.header("Result of Analizing Bike Sharing Data")
 
-tab1, tab2, tab3, tab4 = st.tabs(
-    ["Relation Weather and Count", "Avg & Sum", "Pattern by Weekday", "Clustering"]
+tab1, tab2, tab3, tab4, tab5 = st.tabs(
+    ["Relation Weather and Count", "Avg & Sum", "Pattern by Weekday", "Clustering", "Correlations"]
 )
 
 with tab1:
@@ -237,3 +237,12 @@ with tab4:
 
     # Menampilkan tabel di Streamlit
     st.dataframe(data=filtered_cluster_df, width=700)
+
+with tab5:
+    heatmap_df = main_df.drop(columns=["instant", "dteday", "year"], axis=1)
+    correlation_values = heatmap_df.corr()
+    fig, ax = plt.subplots(figsize=(15,15))
+    ax.heatmap(
+        correlation_values, cbar=True, square=True, annot=True, annot_kws={"size": 8}
+    )
+    st.pyplot(fig)
