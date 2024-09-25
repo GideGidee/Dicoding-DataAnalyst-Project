@@ -242,7 +242,5 @@ with tab5:
     heatmap_df = main_df.drop(columns=["instant", "dateday", "year"], axis=1)
     correlation_values = heatmap_df.corr()
     fig, ax = plt.subplots(figsize=(15,15))
-    ax.heatmap(
-        correlation_values, cbar=True, square=True, annot=True, annot_kws={"size": 8}
-    )
+    sns.heatmap(correlation_values, cbar=True, square=True, annot=True, annot_kws={"size": 8})
     st.pyplot(fig)
